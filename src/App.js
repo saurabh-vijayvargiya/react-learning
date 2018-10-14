@@ -6,7 +6,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0
+      counter: 0,
+      num: "",
+      message: ""
     };
   }
 
@@ -22,15 +24,45 @@ class App extends Component {
     });
   }
 
+  checkPrime(e) {
+    let number = e.target.value;
+    let msg = "";
+
+    if (number == 2) {
+      msg = "Prime";
+    }
+    else {
+      let prime = true;
+      for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+          prime = false;
+          break;
+        }
+      }
+
+      msg = prime ? "Prime" : "Not Prime";
+    }
+
+    this.setState({
+      num: number,
+      message: msg
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <div>
+          <h1>Prime Number checker</h1>
+          <input type="number" value={this.state.num} onChange={this.checkPrime.bind(this)} />
+          <p>{this.state.message}</p>
+        </div>
+        <div>
+          <h1>Counter</h1>
           <p>{this.state.counter}</p>
           <button onClick={this.increaseCounter.bind(this)}>Increase</button>
           <button onClick={this.decreaseCounter.bind(this)}>Decrease</button>
-        </header>
+        </div>
       </div>
     );
   }
