@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import PushButton from './Components/PushButton';
 class App extends Component {
   render() {
     return (
@@ -19,6 +19,7 @@ class App extends Component {
           >
             Learn React for fun
           </a>
+          <PushButton />
         </header>
       </div>
     );
