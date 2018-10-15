@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PushButton from './Components/PushButton';
+import Text from './Components/Text';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React for fun
-          </a>
-          <PushButton />
-        </header>
+        <div class="row">
+          <Text symbol="TRXETH" orderId="2387611" price="0.0001204" quantity="785" />
+        </div>
       </div>
     );
   }
